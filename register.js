@@ -1,7 +1,6 @@
 const BASE_URL = 'http://localhost:8000';
 let mode = 'CREATE'; //default mode
 let selectid = '';
-
 window.onload = async() => {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
@@ -62,13 +61,14 @@ const validateData = (userData) => {
 };
 
 const submitData = async () => {
-
+    console.log('hello world');
     let usernameDOM = document.querySelector('input[name=username]');
     let passwordDOM = document.querySelector('input[name=password]');
     let firstNameDOM = document.querySelector('input[name=firstname]');
     let lastNameDOM = document.querySelector('input[name=lastname]');
     let emailDOM = document.querySelector('input[name=email]');
     let phoneDOM = document.querySelector('input[name=phone]');
+    let messageDOM = document.getElementById('message');
 
     try {
 
@@ -85,10 +85,10 @@ const submitData = async () => {
         
         let message = 'บันทึกข้อมูลเรียบร้อย';
         if (mode == 'CREATE') {
-            const response = await axios.post(`${BASE_URL}/users/2}`, userData);
+            const response = await axios.post(`${BASE_URL}/users/${selectid}`, userData);
             console.log('response', response.data);
         }else{
-            const response = await axios.put(`${BASE_URL}/users/2}`, userData);
+            const response = await axios.put(`${BASE_URL}/users/${selectid}`, userData);
             message = 'แก้ไขข้อมูลเรียบร้อย';
             console.log('response', response.data);
         }
