@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         if (room.status.toLowerCase() === 'available') {
             document.getElementById('reserve-btn').addEventListener('click', () => {
-                alert('Reservation functionality will be implemented soon.');
+                window.location.href = `room_reservation.html?room_id=${roomId}&room_type_id=${roomTypeId}`;
             });
         }
     } catch (error) {

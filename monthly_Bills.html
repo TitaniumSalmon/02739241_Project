@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Bills</title>
+</head>
+<body>
+    <h1>Add Monthly Bill</h1>
+        <label for="roomNo">Room Number:</label>
+        <input type="number" id="roomNo" name="roomNo" required><br><br>
+
+        <label for="billingDate">Billing Date:</label>
+        <input type="date" id="billingDate" name="billingDate" required><br><br>
+
+        <label for="rentAmount">Rent Amount:</label>
+        <input type="number" id="rentAmount" name="rentAmount" step="0.01" required><br><br>
+
+        <label for="electricityUsage">Electricity Usage:</label>
+        <input type="number" id="electricityUsage" name="electricityUsage" required><br><br>
+
+        <label for="electricityCost">Electricity Cost:</label>
+        <input type="number" id="electricityCost" name="electricityCost" step="0.01" required><br><br>
+
+        <label for="waterUsage">Water Usage:</label>
+        <input type="number" id="waterUsage" name="waterUsage" required><br><br>
+
+        <label for="waterCost">Water Cost:</label>
+        <input type="number" id="waterCost" name="waterCost" step="0.01" required><br><br>
+
+        <label for="totalAmount">Total Amount:</label>
+        <input type="number" id="totalAmount" name="totalAmount" step="0.01" required><br><br>
+
+        <button onclick="submitData()" class="w-full register-button">
+            Register
+        </button>
+        <script src="monthly_Bills.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+</body>
+</html>

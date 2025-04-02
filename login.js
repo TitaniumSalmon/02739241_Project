@@ -33,11 +33,13 @@ const submitData = async () => {
         console.log("Submitting data", userData);
         
         const response = await axios.post(`${BASE_URL}/login`, userData);
-        const session = await axios.get(`${BASE_URL}/setSession`);
+        //const session = await axios.get(`${BASE_URL}/setSession`);
         console.log('Login successful:', response.data);
-        console.log('Session set:', session.data);
+        //console.log('Session set:', session.data);
         
         // Handle successful login (e.g., store token, redirect user)
+        localStorage.setItem('username', response.data.user);
+        localStorage.setItem('userId', response.data.userId);
         localStorage.setItem('token', response.data.token);
         alert('Login successful!');
     } catch (error) {
