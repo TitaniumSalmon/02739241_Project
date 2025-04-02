@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@%5E1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -13,7 +14,10 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="news.asp">News</a></li>
         <li><a href="contact.asp">Contact</a></li>
-        <li style="float:right"><a href="login.html">Log In</a></li>
+        <div class="button-container ">
+            <li style="float:right"><a class="login-button" href="login.html">Log In</a></li>
+            
+        </div>
         <li style="float:right"><a class="active" href="register.html">Sign Up</a></li>
     </ul>
     <div class="max-w-md mx-auto mt-10 bg-white p-8 rounded-lg shadow-md">
@@ -43,11 +47,13 @@
                 <label for="phone" class="block text-sm font-medium text-black">Phone</label>
                 <input type="tel" id="phone" name="phone" class="mt-1 block w-full border-gray-300 rounded-md shadow-md bg-gray-200 focus:ring-navy-500 focus:border-navy-500" required>
             </div>
+
+            <div id = message class="message"></div>
+
             <div>
                 <button onclick="submitData()" class="w-full register-button">
                     Register
                 </button>
-            </div>
             </div>
         </div>
     </div>

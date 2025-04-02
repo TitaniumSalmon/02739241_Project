@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@%5E1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Room Management</title>
+</head>
+<body>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="room.html">Rooms</a></li>
+        <li><a href="contact.asp">Contact</a></li>
+        <div class="button-container ">
+            <li style="float:right"><a class="login-button" href="login.html">Log In</a></li>
+        </div>
+        <li style="float:right"><a href="register.html">Sign Up</a></li>
+    </ul>
+    <div>
+        <main>
+            <h1>Room Management Page</h1>
+            <input type="text" id="searchBox" placeholder="Search by Room Number or Type" class="border border-gray-300 px-4 py-2 mb-4 w-full">
+            <div id="rooms"></div>
+        </main>
+    </div>
+
+    <script>
+        const BASE_URL = 'http://localhost:8000'; // Ensure this matches your server's base URL
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="room.js"></script>
+</body>
+</html>

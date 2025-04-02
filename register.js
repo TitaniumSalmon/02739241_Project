@@ -81,6 +81,14 @@ const submitData = async () => {
             phone: phoneDOM.value,
         };
 
+        const errors = validateData(userData);
+        if (errors.length > 0) {
+            throw {
+                message: 'กรุณากรอกข้อมูลให้ครบถ้วน',
+                errors: errors
+            };
+        }
+
         console.log("submitData", userData);
         
         let message = 'บันทึกข้อมูลเรียบร้อย';
@@ -99,7 +107,7 @@ const submitData = async () => {
         let htmlData = '<div>';
         htmlData += `<div> ${error.message} </div>`;
         htmlData += '<ul>';
-
+        console.log(error.message);
         if (error.response) {
             console.log(error.response);
             error.message = error.response.data.message;

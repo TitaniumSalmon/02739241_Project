@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Export PDF</title>
+    <link href="https://unpkg.com/tailwindcss@%5E1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="max-w-md mx-auto mt-10 bg-white p-8 rounded-lg shadow-md">
+        <div class="space-y-4">
+            <div>
+                <label for="move-in date" class="block text-sm font-medium text-black">reservation_date</label>
+                <input type="text" id="move-in_date" name="move-in_date" class="mt-1 block w-full border-gray-300 rounded-md bg-gray-200 shadow-sm focus:ring-navy-500 focus:border-navy-500" required>
+            </div>
+            <div>
+                <label for="deposit" class="block text-sm font-medium text-black">amount_paid</label>
+                <input type="text" id="deposit" name="deposit" class="mt-1 block w-full border-gray-300 rounded-md bg-gray-200 shadow-sm focus:ring-navy-500 focus:border-navy-500" required>
+            </div>
+            <div>
+                <label for="deposit" class="block text-sm font-medium text-black">payment_method</label>
+                <div>
+                    <input name="payment_method" type="radio" value="cash"> cash
+                </div>
+                <div>
+                    <input name="payment_method" type="radio" value="bank_transfer"> bank_transfer
+                </div>
+                <div>
+                    <input name="payment_method" type="radio" value="credit_card"> credit_card
+                </div>
+            </div>
+            <div>
+                <button onclick="submitData()" class="w-full register-button">
+                    Register
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
