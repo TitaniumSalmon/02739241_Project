@@ -1,4 +1,13 @@
 // API Part
+//server error
+// 400 error = bad request
+// 401 error = unauthorized
+// 403 error = forbidden
+// 404 error = not found
+// 500 error = internal server error
+// 503 error = service unavailable
+// 504 error = gateway timeout
+// 511 error = network authentication required
 
 const express = require('express');
 //const session = require('express-session');
@@ -11,12 +20,6 @@ const app = express();
 const oneDay = 1000 * 60 * 60 * 24;
 const port = 8000;
 
-// app.use(session({
-//     secret: "secrctekeykokdev",
-//     saveUninitialized: true,
-//     cookie: { maxAge: oneDay },
-//     resave: false
-// }));
 app.use(cookieSession({
     name: 'session',
     keys: ['secret-key1', 'secret-key2'],
@@ -180,6 +183,23 @@ app.post('/users', async (req, res) => {
         res.status(500).send('Server error');
     }
 });
+
+app.get('/users/:id', async (req, res) => {
+    let id = req.params.id;
+
+    try {
+        const [results] = await conn.query('SELECT * FROM Users WHERE user_id = ?', [id]);
+        if (results.length > 0) {
+            res.json(results[0]);
+        } else {
+            res.status(404).json({ error: 'User not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Server error');
+    }
+}
+);
 
 app.put('/users/:id', async (req, res) => {
     let id = req.params.id;

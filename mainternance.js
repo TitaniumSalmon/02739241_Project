@@ -4,10 +4,10 @@ const validateData = (Data) => {
     let errors = [];
 
     if (!Data.roomNo) {
-        errors.push('กรุณากรอกชื่อผู้ใช้');
+        errors.push('กรุณากรอกเลขห้องพัก');
     }
     if (!Data.description) {
-        errors.push('กรุณากรอกรหัสผ่าน');
+        errors.push('กรุณากรอกรายละเอียดการซ่อมบำรุง');
     }
     return errors;
 };

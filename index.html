@@ -7,50 +7,35 @@
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
-<body>
+<body style="background-image: url('bed.jpg'); background-size: cover; background-position: center;">
     <ul>
         <li><a class="active" href="index.html">Home</a></li>
         <li><a href="room.html">Rooms</a></li>
         <li><a href="lease_contracts.html">Contact</a></li>
+        <li><a href="bills_review.html">Bill</a></li>
         <li id="admin-panel-link" style="display: none;"><a href="admin.html">Admin Panel</a></li>
         <div class="button-container" id="auth-buttons">
             <!-- Authentication buttons will be dynamically rendered here -->
         </div>
     </ul>
-    <script src="index.html"></script>
+    <h1 class="text-4xl font-bold text-center mt-8 bg-[#144272] p-4 inline-block rounded" style="color: #144272; background-color: white;">
+        Apartment Management System
+    </h1>
+    
     <script>
-        const BASE_URL = 'http://localhost:8000'; // Ensure this matches your server's base URL
-
-        // Dynamically render authentication buttons
-        document.addEventListener('DOMContentLoaded', () => {
-            const authButtonsContainer = document.getElementById('auth-buttons');
-            const adminPanelLink = document.getElementById('admin-panel-link');
-            const userId = localStorage.getItem('userId');
-            const username = localStorage.getItem('username');
-
-            if (userId) {
-                if (userId == 1) {
-                    adminPanelLink.style.display = 'block';
-                }
-
-                authButtonsContainer.innerHTML = `
-                    <li style="float:right"><button id="logout-button" class="bg-red-500 text-white px-4 py-3 rounded">Log Out</button></li>
-                    <li style="float:right"><span class="username-display text-white">Welcome, ${username}</span></li>
-                `;
-
-                // Add logout functionality
-                document.getElementById('logout-button').addEventListener('click', () => {
-                    localStorage.removeItem('userId');
-                    localStorage.removeItem('username');
-                    window.location.reload();
-                });
-            } else {
-                authButtonsContainer.innerHTML = `
-                    <li style="float:right"><a class="login-button" href="login.html">Log In</a></li>
-                    <li style="float:right"><a href="register.html">Sign Up</a></li>
-                `;
+        // Redirect navbar to menu.html for phone-sized screens
+        function handleResponsiveNavbar() {
+            if (window.innerWidth <= 768) { // Phone width threshold
+                window.location.href = 'menu.html';
             }
-        });
+        }
+
+        // Check on page load
+        handleResponsiveNavbar();
+
+        // Optionally, listen for window resize
+        window.addEventListener('resize', handleResponsiveNavbar);
     </script>
+    <script src="index.js"></script>
 </body>
 </html>

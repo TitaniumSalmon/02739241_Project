@@ -3,38 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@%5E1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <title>Monthly Bills</title>
 </head>
-<body>
-    <h1>Add Monthly Bill</h1>
-        <label for="roomNo">Room Number:</label>
-        <input type="number" id="roomNo" name="roomNo" required><br><br>
-
-        <label for="billingDate">Billing Date:</label>
-        <input type="date" id="billingDate" name="billingDate" required><br><br>
-
-        <label for="rentAmount">Rent Amount:</label>
-        <input type="number" id="rentAmount" name="rentAmount" step="0.01" required><br><br>
-
-        <label for="electricityUsage">Electricity Usage:</label>
-        <input type="number" id="electricityUsage" name="electricityUsage" required><br><br>
-
-        <label for="electricityCost">Electricity Cost:</label>
-        <input type="number" id="electricityCost" name="electricityCost" step="0.01" required><br><br>
-
-        <label for="waterUsage">Water Usage:</label>
-        <input type="number" id="waterUsage" name="waterUsage" required><br><br>
-
-        <label for="waterCost">Water Cost:</label>
-        <input type="number" id="waterCost" name="waterCost" step="0.01" required><br><br>
-
-        <label for="totalAmount">Total Amount:</label>
-        <input type="number" id="totalAmount" name="totalAmount" step="0.01" required><br><br>
-
-        <button onclick="submitData()" class="w-full register-button">
-            Register
-        </button>
-        <script src="monthly_Bills.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-lg">
+        <h1 class="text-2xl font-bold mb-6 text-center">Add Monthly Bill</h1>
+        <form>
+            <div class="mb-4">
+                <label for="roomNo" class="block text-gray-700 text-sm font-bold mb-2">Room Number:</label>
+                <input type="number" id="roomNo" name="roomNo" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4">
+                <label for="billingDate" class="block text-gray-700 text-sm font-bold mb-2">Billing Date:</label>
+                <input type="date" id="billingDate" name="billingDate" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4">
+                <label for="rentAmount" class="block text-gray-700 text-sm font-bold mb-2">Rent Amount:</label>
+                <input type="number" id="rentAmount" name="rentAmount" step="0.01" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4">
+                <label for="electricityUsage" class="block text-gray-700 text-sm font-bold mb-2">Electricity Usage:</label>
+                <input type="number" id="electricityUsage" name="electricityUsage" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4">
+                <label for="electricityCost" class="block text-gray-700 text-sm font-bold mb-2">Electricity Cost:</label>
+                <input type="number" id="electricityCost" name="electricityCost" step="0.01" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4">
+                <label for="waterUsage" class="block text-gray-700 text-sm font-bold mb-2">Water Usage:</label>
+                <input type="number" id="waterUsage" name="waterUsage" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4">
+                <label for="waterCost" class="block text-gray-700 text-sm font-bold mb-2">Water Cost:</label>
+                <input type="number" id="waterCost" name="waterCost" step="0.01" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="mb-4">
+                <label for="totalAmount" class="block text-gray-700 text-sm font-bold mb-2">Total Amount:</label>
+                <input type="number" id="totalAmount" name="totalAmount" step="0.01" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+            <div class="flex items-center justify-center">
+                <button onclick="submitData()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Register
+                </button>
+            </div>
+        </form>
+    </div>
+    <script src="monthly_Bills.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
 </body>
 </html>

@@ -39,15 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await axios.get(`${BASE_URL}/users/${userId}`);
             const user = response.data;
             modalTitle.textContent = 'Edit User';
-            userForm.user_id.value = user.user_id;
-            userForm.username.value = user.username;
-            userForm.password.value = ''; // Leave password blank for security
-            userForm.firstname.value = user.firstname;
-            userForm.lastname.value = user.lastname;
-            userForm.email.value = user.email;
-            userForm.phone.value = user.phone;
-            userForm.role.value = user.role;
+            document.getElementById('userId').value = user.user_id;
+            document.getElementById('username').value = user.username;
+            document.getElementById('password').value = ''; // Leave password blank for security
+            document.getElementById('firstname').value = user.firstname;
+            document.getElementById('lastname').value = user.lastname;
+            document.getElementById('email').value = user.email;
+            document.getElementById('phone').value = user.phone;
+            document.getElementById('role').value = user.role;
             userModal.style.display = 'block';
+            
         } catch (error) {
             console.error('Error fetching user:', error);
         }

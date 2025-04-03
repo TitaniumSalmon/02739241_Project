@@ -17,7 +17,7 @@ async function submitData() {
         console.log('amountPaid', amountPaid);
         console.log(document.getElementById('deposit-am'))
         const paymentMethod = document.querySelector('input[name="payment_method"]:checked').value;
-
+    
         console.log(user_id)
         // Construct the reservation data object
         const reservationData = {
@@ -27,22 +27,17 @@ async function submitData() {
             amount: parseFloat(amountPaid),               
             payment_method: paymentMethod
         };
-
+    
         // Send the data to the server
         const response = await axios.post(`${BASE_URL}/reservations-with-payment`, reservationData);
-
+    
         console.log('Reservation and payment successful:', response.data);
         alert('Reservation and payment completed successfully!');
+        
+        // Redirect to index.html
+        window.location.href = 'index.html';
     } catch (error) {
         console.error('Error during reservation and payment:', error);
         alert('An error occurred while processing the reservation and payment.');
     }
-}
-
-
-window.onload = async() => {
-    // console.log('user_id', user_id.data.user);
-    // console.log('user_id', user_id);
-    // console.log('id', id);
-    // console.log('room_id', room_id);
 }

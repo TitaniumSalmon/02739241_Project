@@ -10,10 +10,11 @@
 </head>
 <body>
     <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a  href="index.html">Home</a></li>
         <li><a class="active" href="room.html">Rooms</a></li>
         <li><a href="lease_contracts.html">Contact</a></li>
-        <li><a href="admin.html">Admin Panel</a></li>
+        <li><a href="bills_review.html">Bill</a></li>
+        <li id="admin-panel-link" style="display: none;"><a href="admin.html">Admin Panel</a></li>
         <div class="button-container" id="auth-buttons">
             <!-- Authentication buttons will be dynamically rendered here -->
         </div>
@@ -54,22 +55,23 @@
     </div>
 
     <script>
-        //const BASE_URL = 'http://localhost:8000'; // Ensure this matches your server's base URL
-    </script>
-
-    <script>
         const BASE_URL = 'http://localhost:8000'; // Ensure this matches your server's base URL
 
         // Dynamically render authentication buttons
         document.addEventListener('DOMContentLoaded', () => {
             const authButtonsContainer = document.getElementById('auth-buttons');
+            const adminPanelLink = document.getElementById('admin-panel-link');
             const userId = localStorage.getItem('userId');
             const username = localStorage.getItem('username');
 
             if (userId) {
+                if (userId == 1) {
+                    adminPanelLink.style.display = 'block';
+                }
+
                 authButtonsContainer.innerHTML = `
+                    <li style="float:right"><button id="logout-button" class="bg-red-500 text-white px-4 py-3 rounded">Log Out</button></li>
                     <li style="float:right"><span class="username-display text-white">Welcome, ${username}</span></li>
-                    <li style="float:right"><button id="logout-button" class="logout-button bg-red-500 text-white px-4 py-2 rounded">Log Out</button></li>
                 `;
 
                 // Add logout functionality

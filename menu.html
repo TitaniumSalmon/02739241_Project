@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Added styles for vertical navbar */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #282a35;
+        }
+
+        li {
+            display: block;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+        background-color: #111;
+}
+.active {
+    background-color: #205295;
+}
+.register-button {
+    background-color: #144272;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+}
+.register-button:hover {
+    background-color: #0f3558;
+}
+.register-button:focus {
+    outline: none;
+}
+.padding {
+    padding: 20px;
+}
+
+.button-container {
+    gap: 10px;
+}
+
+.button-container a {
+    display: inline-block;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+.login-button {
+    background-color: #28a745;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.login-button:hover {
+    background-color: #218838;
+}
+.login-button:focus {
+    outline: none;
+}
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="room.html">Rooms</a></li>
+        <li><a href="lease_contracts.html">Contact</a></li>
+        <li><a href="bills_review.html">Bill</a></li>
+        <li id="admin-panel-link" style="display: none;"><a href="admin.html">Admin Panel</a></li>
+        <div class="button-container" id="auth-buttons">
+            <!-- Authentication buttons will be dynamically rendered here -->
+        </div>
+    </ul>
+    <script>
+        // Redirect navbar to menu.html for phone-sized screens
+        function handleResponsiveNavbar() {
+            if (window.innerWidth > 768) { // Phone width threshold
+                window.location.href = 'index.html';
+            }
+        }
+
+        // Check on page load
+        handleResponsiveNavbar();
+
+        // Optionally, listen for window resize
+        window.addEventListener('resize', handleResponsiveNavbar);
+    </script>
+
+</body>
+</html>

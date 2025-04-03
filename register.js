@@ -103,6 +103,8 @@ const submitData = async () => {
         
         messageDOM.innerText = message;
         messageDOM.className = 'message success';
+        window.location.href = 'index.html';
+
     } catch (error) {
         let htmlData = '<div>';
         htmlData += `<div> ${error.message} </div>`;

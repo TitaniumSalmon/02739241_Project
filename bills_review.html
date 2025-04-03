@@ -5,8 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review Bills</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://unpkg.com/tailwindcss@%5E1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="room.html">Rooms</a></li>
+        <li><a href="lease_contracts.html">Contact</a></li>
+        <li><a class="active" href="bills_review.html">Bill</a></li>
+        <li id="admin-panel-link" style="display: none;"><a href="admin.html">Admin Panel</a></li>
+        <li><a href="monthly_Bills.html">Add Bill</a></li>
+        <div class="button-container" id="auth-buttons">
+            <!-- Authentication buttons will be dynamically rendered here -->
+        </div>
+    </ul>
     <nav>
         <a href="Monthly_Bills.html">Add Bill</a> |
         <a href="bills_review.html">Review Bills</a>
@@ -14,6 +27,7 @@
     <h1>Monthly Bills Overview</h1>
     <canvas id="billsChart" width="400" height="200"></canvas>
     <script src="bills_review.js"></script>
+    <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
 </body>
 </html>

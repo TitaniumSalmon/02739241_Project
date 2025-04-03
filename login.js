@@ -42,6 +42,7 @@ const submitData = async () => {
         localStorage.setItem('userId', response.data.userId);
         localStorage.setItem('token', response.data.token);
         alert('Login successful!');
+        window.location.href = 'index.html';
     } catch (error) {
         let errorMessage = 'เกิดข้อผิดพลาด';
         if (error.response) {
